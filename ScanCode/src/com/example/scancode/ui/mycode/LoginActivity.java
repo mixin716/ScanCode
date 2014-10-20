@@ -11,6 +11,7 @@ import com.example.scancode.BaseActivity;
 import com.example.scancode.R;
 import com.example.scancode.utils.AnimUtil;
 import com.example.scancode.utils.KeyBoard;
+import com.jky.struct2.http.core.AjaxParams;
 
 public class LoginActivity extends BaseActivity {
 
@@ -81,6 +82,12 @@ public class LoginActivity extends BaseActivity {
 
 			break;
 		}
+	}
+
+	private void requestLogin() {
+		showLoading();
+		AjaxParams params = new AjaxParams();
+
 	}
 
 }
