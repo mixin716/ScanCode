@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 字号问题 -->
+    <!-- 26 xlarge -->
+    <dimen name="text_size_26px">22sp</dimen>
+    <!-- 24 large -->
+    <dimen name="text_size_24px">19sp</dimen>
+    <!-- 22 middle -->
+    <dimen name="text_size_22px">17sp</dimen>
+    <!-- 20 middle default -->
+    <dimen name="text_size_20px">15.5sp</dimen>
+    <!-- 18 small -->
+    <dimen name="text_size_18px">14sp</dimen>
+    <!-- 16 xsmall -->
+    <dimen name="text_size_16px">12sp</dimen>
+    <!-- 文字行间距 -->
+    <dimen name="text_line_spacing">5dp</dimen>
+
+    <!-- 应用中的真实的字号 -->
+    <dimen name="dp_one">1dp</dimen>
+    <dimen name="dp_two">2dp</dimen>
+    <dimen name="px_two">2px</dimen>
+    <dimen name="dp_three">3dp</dimen>
+    <dimen name="dp_four">4dp</dimen>
+    <dimen name="dp_five">5dp</dimen>
+    <dimen name="px_five">5px</dimen>
+    <dimen name="px_eight">8px</dimen>
+    <dimen name="dp_ten">10dp</dimen>
+    <dimen name="px_ten">10px</dimen>
+    <dimen name="dp_twelve">12dp</dimen>
+    <dimen name="dp_fifteen">15dp</dimen>
+    <dimen name="px_fifteen">15px</dimen>
+    <dimen name="sp_fifteen">15sp</dimen>
+    <dimen name="px_sixteen">16px</dimen>
+    <dimen name="sp_twelve">12sp</dimen>
+    <dimen name="dp_eightteen">18dp</dimen>
+    <dimen name="sp_eightteen">18sp</dimen>
+    <dimen name="dp_twenty">20dp</dimen>
+    <dimen name="px_twenty">20px</dimen>
+    <dimen name="sp_twenty">20sp</dimen>
+    <dimen name="dp_twenty_five">25dp</dimen>
+    <dimen name="px_twenty_five">25px</dimen>
+    <dimen name="sp_twenty_five">25sp</dimen>
+    <dimen name="dp_thirty">30dp</dimen>
+    <dimen name="px_thirty">30px</dimen>
+    <dimen name="dp_fourty">40dp</dimen>
+    <dimen name="px_fourty">43px</dimen>
+    <dimen name="px_fourty_five">45px</dimen>
+    <dimen name="dp_fifty">50dp</dimen>
+    <dimen name="px_fifty">50px</dimen>
+    <dimen name="dp_sixty">60dp</dimen>
+    <dimen name="px_sixty">60px</dimen>
+    <dimen name="px_sixty_five">65px</dimen>
+    <dimen name="dp_seventy">70dp</dimen>
+    <dimen name="px_seventy">70px</dimen>
+    <dimen name="px_seventy_five">75px</dimen>
+    <dimen name="px_eighty">80px</dimen>
+    <dimen name="dp_ninety">90dp</dimen>
+    <dimen name="px_ninety">90px</dimen>
+    <dimen name="machine_draw_text">40sp</dimen>
+    <dimen name="height_top_bar">46dp</dimen>
+    <dimen name="padding_search_bar">5dp</dimen>
+    <dimen name="height_row_weixin">59dp</dimen>
+    <dimen name="size_avatar">50dp</dimen>
+    <dimen name="margin_chat_activity">5dp</dimen>
+    <dimen name="field_textsize">14sp</dimen>
+    <dimen name="field_margin_right">5dp</dimen>
+    <dimen name="call_button_padding_vertical">10dp</dimen>
+    <dimen name="call_button_padding_left">25dp</dimen>
+    <dimen name="call_button_padding_right">25dp</dimen>
+    <dimen name="sidebar_text_size">10dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="image_thumbnail_size">100dp</dimen>
+    <dimen name="image_thumbnail_spacing">1dp</dimen>
+
+</resources>
