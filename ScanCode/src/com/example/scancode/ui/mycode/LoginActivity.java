@@ -9,9 +9,11 @@ import android.widget.TextView;
 
 import com.example.scancode.BaseActivity;
 import com.example.scancode.R;
+import com.example.scancode.common.Urls;
 import com.example.scancode.utils.AnimUtil;
 import com.example.scancode.utils.KeyBoard;
 import com.jky.struct2.http.core.AjaxParams;
+import com.jky.struct2.http.entityhandle.HttpResult;
 
 public class LoginActivity extends BaseActivity {
 
@@ -87,7 +89,13 @@ public class LoginActivity extends BaseActivity {
 	private void requestLogin() {
 		showLoading();
 		AjaxParams params = new AjaxParams();
+		httpRequest.get(Urls.LOGIN, params, callBack, 0);
+	}
 
+	@Override
+	protected void handleResult(int requestCode, HttpResult result) {
+		// TODO Auto-generated method stub
+		super.handleResult(requestCode, result);
 	}
 
 }
