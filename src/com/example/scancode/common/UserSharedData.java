@@ -26,79 +26,26 @@ public class UserSharedData {
 		return userShare;
 	}
 
-	/** 保存登录状�? */
+	/** 保存登录状状态 */
 	public void SaveFlag(boolean flag) {
 		edit.putBoolean("user_flag", flag);
 		edit.commit();
 	}
 
-	/** 获取登录状�? */
+	/** 获取登录状状态 */
 	public boolean GetFlag() {
 		return share.getBoolean("user_flag", false);
 	}
 
-	/** 保存token */
-	public void SaveToken(String token) {
-		edit.putString("user_token", token);
-		edit.commit();
-	}
-
-	/** 获取token */
-	public String GetToken() {
-		return share.getString("user_token", null);
-	}
-
-	/** 保存id */
-	public void SaveId(int id) {
-		edit.putInt("user_id", id);
-		edit.commit();
-	}
-
-	/** 获取id */
-	public int GetId() {
-		return share.getInt("user_id", 0);
-	}
-
-	/** 保存用户�?-手机�?*/
-	public void SaveName(String name) {
-		edit.putString("user_name", name);
-		edit.commit();
-	}
-
-	/** 获取用户�?-手机�?*/
-	public String GetName() {
-		return share.getString("user_name", null);
-	}
-	
-	/** 保存用户�?-真实*/
-	public void SaveRealname(String realname){
-		edit.putString("realname", realname);
-		edit.commit();
-	}
-	
-	/** 获取用户�?-真实*/
-	public String Getrealname(){
-		return share.getString("realname", null);
-	}
-
-	/** 保存手机�?*/
+	/** 保存手机号 */
 	public void SavePhone(String phone) {
 		edit.putString("user_phone", phone);
 		edit.commit();
 	}
 
-	/** 获取手机�?*/
-	public String GetPhone() {
+	/** 获取手机号 */
+	public String Getphone() {
 		return share.getString("user_phone", null);
-	}
-	/** 保存身份证号*/
-	public void SaveIdcard(String idcard){
-		edit.putString("idcard", idcard);
-		edit.commit();
-	}
-	/** 获取身份证号*/
-	public String GetIdcard(){
-		return share.getString("idcard", null);
 	}
 
 	/** 保存密码 */
@@ -112,36 +59,37 @@ public class UserSharedData {
 		return share.getString("user_pwd", null);
 	}
 
-	/** 保存�?��状�? */
-	public void SaveOpenFlag(int openFlag) {
-		edit.putInt("user_open", openFlag);
+	/** 保存等级 */
+	public void SaveLevel(String level) {
+		edit.putString("user_level", level);
 		edit.commit();
 	}
 
-	/** 获取�?��状�? */
-	public int GetOpenFlag() {
-		return share.getInt("user_open", 0);
+	/** 获取等级 */
+	public String GetLevel() {
+		return share.getString("user_level", null);
 	}
 
-	/** 保存支付密码 */
-	public void SaveBuyPwd(String buyPwd) {
-		edit.putString("user_buy", buyPwd);
+	/** 保存姓名 */
+	public void SaveName(String name) {
+		edit.putString("user_name", name);
 		edit.commit();
 	}
 
-	/** 获取支付密码 */
-	public String GetBuyPwd() {
-		return share.getString("user_buy", null);
+	/** 获取姓名 */
+	public String GetName() {
+		return share.getString("user_name", null);
 	}
 
-	/** 保存银行卡数 */
-	public void SaveBankSum(String banksum) {
-		edit.putString("user_banksum", banksum);
+	/** 保存总码乐 */
+	public void SaveAllPoint(String point) {
+		edit.putString("user_all_point", point);
 		edit.commit();
 	}
 
-	/** 获取银行卡数 */
-	public String GetBankSum() {
-		return share.getString("user_banksum", null);
+	/** 获取总码乐 */
+	public String GetAllPoint() {
+		return share.getString("user_all_point", null);
 	}
+
 }

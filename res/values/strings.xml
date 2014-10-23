@@ -6,5 +6,6 @@
     <string name="menu_settings">Settings</string>
     <string name="no_network">网络连接不可用，无法上传到服务器</string>
     <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
+    <string name="my_code_number">当前您的账户上有%1$s个码乐盾.</string>
 
 </resources>

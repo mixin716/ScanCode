@@ -11,15 +11,16 @@ import com.example.scancode.BaseActivity;
 import com.example.scancode.R;
 import com.example.scancode.utils.AnimUtil;
 
-/** 验证扫描结果 */
+/** 锟斤拷证扫锟斤拷锟斤拷 */
 public class CheckCodeActivity extends BaseActivity {
 
 	private LinearLayout llID;
 	private TextView tvID;
 	private EditText etID, etSecurity;
 	private Button btChcek;
-	private int intoFlag;// 1 扫码 2手动输入
-	private String strID;// 传过来的ID
+	private int intoFlag;// 1 鎵弿杩涘叆 2鐩存帴杈撳叆
+	private String strIDUrl;
+	private String strID, strXtype, strBrand;// 鎵弿ID
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +34,19 @@ public class CheckCodeActivity extends BaseActivity {
 	protected void initVariable() {
 		// TODO Auto-generated method stub
 		intoFlag = this.getIntent().getIntExtra("intoFlag", 1);
-		strID = this.getIntent().getStringExtra("scanID");
+		strIDUrl = this.getIntent().getStringExtra("scanIDUrl");
+		strID = strIDUrl.substring(strIDUrl.indexOf("code") + 5,
+				strIDUrl.indexOf("code") + 15);
+		strXtype = strIDUrl.substring(strIDUrl.indexOf("xtype") + 6,
+				strIDUrl.indexOf("brand") - 1);
+		strBrand = strIDUrl.substring(strIDUrl.indexOf("brand") + 6,
+				strIDUrl.length());
 	}
 
 	@Override
 	protected void setTitleViews() {
 		// TODO Auto-generated method stub
-		titleText.setText("验证");
+		titleText.setText("楠岃瘉");
 	}
 
 	@Override

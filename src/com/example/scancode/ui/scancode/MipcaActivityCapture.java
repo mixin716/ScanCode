@@ -104,7 +104,7 @@ public class MipcaActivityCapture extends BaseActivity implements Callback {
 	}
 
 	/**
-	 * ´¦ÀíÉ¨Ãè½á¹û
+	 * ï¿½ï¿½ï¿½ï¿½É¨ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 * @param result
 	 * @param barcode
@@ -123,7 +123,7 @@ public class MipcaActivityCapture extends BaseActivity implements Callback {
 			Intent intent = new Intent(this, CheckCodeActivity.class);
 			Bundle bundle = new Bundle();
 			bundle.putInt("intoFlag", 1);
-			bundle.putString("scanID", resultString);
+			bundle.putString("scanIDUrl", resultString);
 			bundle.putParcelable("bitmap", barcode);
 			intent.putExtras(bundle);
 			startActivity(intent);

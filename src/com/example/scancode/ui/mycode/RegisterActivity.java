@@ -16,6 +16,7 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 import com.example.scancode.BaseActivity;
 import com.example.scancode.R;
 import com.example.scancode.common.Urls;
+import com.example.scancode.common.UserSharedData;
 import com.example.scancode.utils.AnimUtil;
 import com.example.scancode.utils.KeyBoard;
 import com.jky.struct2.http.core.AjaxParams;
@@ -29,7 +30,8 @@ public class RegisterActivity extends BaseActivity implements
 	private RadioGroup rg;
 	private RadioButton rbMan, rbWoman;
 	private String strPhone, strCheck, strPwd;
-	private int sex;// 1:ÄĞ£¬2£ºÅ®
+	private int sex = 1;// 1:ç”·ï¼Œ2ï¼šå¥³
+	private UserSharedData userShare;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,13 +44,13 @@ public class RegisterActivity extends BaseActivity implements
 	@Override
 	protected void initVariable() {
 		// TODO Auto-generated method stub
-
+		userShare = UserSharedData.getInstance(getApplicationContext());
 	}
 
 	@Override
 	protected void setTitleViews() {
 		// TODO Auto-generated method stub
-		titleText.setText("×¢²á");
+		titleText.setText("æ³¨å†Œ");
 	}
 
 	@Override
@@ -81,9 +83,9 @@ public class RegisterActivity extends BaseActivity implements
 			KeyBoard.demissKeyBoard(getApplicationContext(), etPhone);
 			strPhone = etPhone.getText().toString().trim();
 			if (TextUtils.isEmpty(strPhone)) {
-				showToast("ÇëÊäÈëÊÖ»úºÅ");
+				showToast("è¯·è¾“å…¥æ‰‹æœºå·");
 			} else if (strPhone.length() != 11) {
-				showToast("ÇëÊäÈëÕıÈ·µÄÊÖ»úºÅ");
+				showToast("è¯·è¾“å…¥æ­£ç¡®çš„æ‰‹æœºå·");
 			} else {
 				getCheckCode();
 			}
@@ -94,17 +96,17 @@ public class RegisterActivity extends BaseActivity implements
 			strCheck = etCheck.getText().toString().trim();
 			strPwd = etPwd.getText().toString().trim();
 			if (TextUtils.isEmpty(strPhone)) {
-				showToast("ÇëÊäÈëÊÖ»úºÅ");
+				showToast("è¯·è¾“å…¥æ‰‹æœºå·");
 			} else if (strPhone.length() != 11) {
-				showToast("ÇëÊäÈëÕıÈ·µÄÊÖ»úºÅ");
+				showToast("è¯·è¾“å…¥æ­£ç¡®çš„æ‰‹æœºå·");
 			} else if (TextUtils.isEmpty(strCheck)) {
-				showToast("ÇëÊäÈëÑéÖ¤Âë");
+				showToast("è¯·è¾“å…¥éªŒè¯ç ");
 			} else if (TextUtils.isEmpty(strPwd)) {
-				showToast("ÇëÊäÈëÃÜÂë");
+				showToast("è¯·è¾“å…¥å¯†ç ");
 			} else if (strPwd.length() < 6) {
-				showToast("ÇëÊäÈëÕıÈ·³¤¶ÈµÄÃÜÂë");
+				showToast("è¯·è¾“å…¥æ­£ç¡®çš„å¯†ç ");
 			} else {
-
+				requestRegister();
 			}
 
 			break;
@@ -125,13 +127,15 @@ public class RegisterActivity extends BaseActivity implements
 		}
 	}
 
-	private void getCheckCode() {// »ñÈ¡ÑéÖ¤Âë
+	/** å‘é€éªŒè¯ç  */
+	private void getCheckCode() {
 		showLoading();
 		AjaxParams params = new AjaxParams();
 		params.put("usrno", strPhone);
 		httpRequest.get(Urls.REGISTER_GET_CODE, params, callBack, 0);
 	}
 
+	/** æ³¨å†Œ */
 	private void requestRegister() {
 		showLoading();
 		AjaxParams params = new AjaxParams();
@@ -139,7 +143,7 @@ public class RegisterActivity extends BaseActivity implements
 		params.put("pass", strPwd);
 		params.put("pvn", strCheck);
 		params.put("sex", sex + "");
-		httpRequest.get(Urls.LOGIN, params, callBack, 1);
+		httpRequest.get(Urls.REGISTER, params, callBack, 1);
 	}
 
 	@Override
@@ -152,9 +156,31 @@ public class RegisterActivity extends BaseActivity implements
 			JSONObject baseObj = baseArray.getJSONObject(0);
 			switch (requestCode) {
 			case 0:
+				String codeFlag = baseObj.optString("flag");
+				String codeMsg = baseObj.optString("msg");
+				if ("0".equals(codeFlag)) {
+					showToast(codeMsg);
+				} else {
+					showToast(codeMsg);
+				}
 				break;
-
-			default:
+			case 1:
+				String registerFlag = baseObj.optString("flag");
+				String registerMsg = baseObj.optString("msg");
+				if ("0".equals(registerFlag)) {
+					showToast("æ³¨å†ŒæˆåŠŸ");
+					String registerLevel = baseObj.optString("level");
+					String registerUsrno = baseObj.optString("usrno");
+					String registerPorint = baseObj.optString("point2");
+					userShare.SavePhone(registerUsrno);
+					userShare.SavePwd(strPwd);
+					userShare.SaveLevel(registerLevel);
+					userShare.SaveFlag(true);
+					userShare.SaveAllPoint(registerPorint);
+					this.finish();
+				} else {
+					showToast(registerMsg);
+				}
 				break;
 			}
 		} catch (Exception e) {

@@ -33,9 +33,7 @@ import com.jky.struct2.http.entityhandle.HttpResult;
 
 public abstract class BaseActivity extends Activity implements OnClickListener {
 
-	/*
-	 * 控件
-	 */
+
 	protected ImageView titleIvLeft;
 	protected ImageView titleIvRight;
 	protected TextView titleText;
@@ -74,14 +72,14 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 		@Override
 		public void onSuccess(HttpResult httpResult) {
 			dismissLoading();
-			System.out.println("---------解析成功：---------->>");
+			System.out.println("---------璇锋眰鎴愬姛---------->>");
 			handleResult(httpResult.which, httpResult);
 		};
 
 		@Override
 		public void onFailure(int which, HttpExceptionResult result) {
 			dismissLoading();
-			System.out.println("---------解析失败：-------->>");
+			System.out.println("---------璇锋眰澶辫触-------->>");
 			handleNetErr(which, result.code);
 		};
 	};
@@ -101,9 +99,6 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 
 	};
 
-	/**
-	 * 获得手机分辨率
-	 */
 	public void getWindowHW() {
 		DisplayMetrics dm = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -113,10 +108,6 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 		height = dm.heightPixels;
 	}
 
-	/**
-	 * 初始化基类中的基本控件，该方法在页面基类BaseActivity的{@link #onCreate()} 方法中
-	 * {@link #initVariable()} 和 {@link #setTitleViews()}之间自动执行
-	 */
 	private void initViews() {
 		titleLayout = (ViewGroup) findViewById(R.id.page_title);
 		mp = new MarginLayoutParams(RelativeLayout.LayoutParams.FILL_PARENT,
@@ -149,37 +140,20 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 		mInflater = LayoutInflater.from(this);
 	}
 
-	/**
-	 * 该方法用于初始化页面变量，在页面基类BaseActivity的{@link #initViews()}方法之前自动执行
-	 */
 	protected abstract void initVariable();
 
-	/**
-	 * 填充页面顶部内容
-	 * 
-	 * @param layoutRes
-	 */
 	protected void setTopViewRes(int layoutRes) {
 		topLayout.removeAllViews();
 		ViewGroup topView = (ViewGroup) mInflater.inflate(layoutRes, null);
 		topLayout.addView(topView, new LayoutParams(LayoutParams.FILL_PARENT,
 				LayoutParams.FILL_PARENT));
 	}
-
-	/**
-	 * 隐藏顶部
-	 */
 	protected void dismissTop() {
 		if (titleLayout != null) {
 			titleLayout.setVisibility(View.GONE);
 		}
 	}
 
-	/**
-	 * 填充页面中间部分内容
-	 * 
-	 * @param layoutRes
-	 */
 	protected void setContentViewRes(int layoutRes) {
 		contentLayout.removeAllViews();
 		curContent = (ViewGroup) mInflater.inflate(layoutRes, null);
@@ -192,11 +166,6 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 		curContent = viewGroup;
 	}
 
-	/**
-	 * 填充页面底部分内容
-	 * 
-	 * @param layoutRes
-	 */
 	protected void setBottomViewRes(int layoutRes) {
 		bottomLayout.removeAllViews();
 		ViewGroup bottomView = (ViewGroup) mInflater.inflate(layoutRes, null);
@@ -204,43 +173,18 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 				LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
 	}
 
-	/**
-	 * 设置页面标题控件，该方法在页面基类BaseActivity的{@link #initViews()}方法之后自动执行
-	 */
 	protected abstract void setTitleViews();
 
-	/**
-	 * 对页面控件进行设置，该方法必须在实现类的{@link #onCreate()}方法显示调用
-	 */
 	protected abstract void setViews();
 
-	/**
-	 * 成功连接网络，并有数据返回
-	 * 
-	 */
 	protected void handleResult(int requestCode, HttpResult result) {
 		String baseJson = result.baseJson;
 	}
 
-	/**
-	 * 有数据返回,并且数据正确时
-	 * 
-	 * @param reqeustCode
-	 *            :请求的指示
-	 * @param jsonString
-	 */
 	protected void handleJson(int reqeustCode, String jsonString) {
 
 	}
 
-	/**
-	 * 网络错误处理
-	 * 
-	 * @param reqeustCode
-	 *            请求
-	 * @param errorCode
-	 *            1:网络未连接 2：
-	 */
 	public void handleNetErr(int requestCode, int errorCode) {
 
 	}
@@ -256,11 +200,6 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 		doClickAction(v.getId());
 	}
 
-	/**
-	 * 控件点击事件
-	 * 
-	 * @param viewId
-	 */
 	protected void doClickAction(int viewId) {
 	}
 
@@ -273,9 +212,6 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 		return super.onKeyDown(keyCode, event);
 	}
 
-	/**
-	 * 显示加载提示
-	 */
 	protected void showLoading() {
 		if (loadingLayout != null) {
 			loadingLayout.bringToFront();
@@ -283,9 +219,6 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 		}
 	}
 
-	/**
-	 * 隐藏加载提示
-	 */
 	protected void dismissLoading() {
 		if (loadingLayout != null) {
 			loadingLayout.setVisibility(View.GONE);
@@ -293,18 +226,10 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 
 	}
 
-	/**
-	 * 物理返回键执行的动作
-	 */
 	protected void doBackAction() {
 		finish();
 	}
 
-	/**
-	 * toast string消息,时间2秒
-	 * 
-	 * @param msg
-	 */
 	protected void showToast(String msg) {
 		if (toast == null) {
 			toast = Toast.makeText(this, msg, Toast.LENGTH_SHORT);
@@ -317,11 +242,6 @@ public abstract class BaseActivity extends Activity implements OnClickListener {
 		}
 	}
 
-	/**
-	 * toast 资源中的消息,时间2秒
-	 * 
-	 * @param resId
-	 */
 	protected void showToast(int resId) {
 		if (toast == null) {
 			toast = Toast.makeText(getApplicationContext(), resId,

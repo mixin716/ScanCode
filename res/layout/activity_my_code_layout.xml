@@ -6,13 +6,13 @@
     android:orientation="vertical" >
 
     <TextView
+        android:id="@+id/activity_my_code_tv_codes"
         android:layout_width="fill_parent"
         android:layout_height="150dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/ic_my_code_top_bg"
         android:gravity="center"
-        android:text="当前您的账户上有10个码乐盾."
         android:textColor="@color/text_deep"
         android:textSize="18sp" />
 

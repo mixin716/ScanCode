@@ -8,42 +8,22 @@ import android.net.Uri;
 
 public class Constants {
 
-	public static final String INTENT_ACTION_FINISH_ALL = "com.bsk.yun.intent.ACTION_FINISH_ALL";// ¹Ø±ÕËùÓĞÒ³ÃæIntent
+	public static final String INTENT_ACTION_FINISH_ALL = "com.bsk.yun.intent.ACTION_FINISH_ALL";// ï¿½Ø±ï¿½ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ï¿½Intent
 
 	public static Map<String, Object> passValueMap = new HashMap<String, Object>();
 	public static Drawable drawable;
 	public static boolean isChange = false;
 
-	/** µ±Ç° DEMO Ó¦ÓÃµÄ APP_KEY£¬µÚÈı·½Ó¦ÓÃÓ¦¸ÃÊ¹ÓÃ×Ô¼ºµÄ APP_KEY Ìæ»»¸Ã APP_KEY */
 	public static final String APP_KEY = "2025482806";
 
-	/**
-	 * µ±Ç° DEMO Ó¦ÓÃµÄ»Øµ÷Ò³£¬µÚÈı·½Ó¦ÓÃ¿ÉÒÔÊ¹ÓÃ×Ô¼ºµÄ»Øµ÷Ò³¡£
-	 * 
-	 * <p>
-	 * ×¢£º¹ØÓÚÊÚÈ¨»Øµ÷Ò³¶ÔÒÆ¶¯¿Í»§¶ËÓ¦ÓÃÀ´Ëµ¶ÔÓÃ»§ÊÇ²»¿É¼ûµÄ£¬ËùÒÔ¶¨ÒåÎªºÎÖÖĞÎÊ½¶¼½«²»Ó°Ïì£¬ µ«ÊÇÃ»ÓĞ¶¨Òå½«ÎŞ·¨Ê¹ÓÃ SDK ÈÏÖ¤µÇÂ¼¡£
-	 * ½¨ÒéÊ¹ÓÃÄ¬ÈÏ»Øµ÷Ò³£ºhttps://api.weibo.com/oauth2/default.html
-	 * </p>
-	 */
 	public static final String REDIRECT_URL = "http://open.weibo.com/apps/2025482806/info/advanced";
 
-	/**
-	 * Scope ÊÇ OAuth2.0 ÊÚÈ¨»úÖÆÖĞ authorize ½Ó¿ÚµÄÒ»¸ö²ÎÊı¡£Í¨¹ı Scope£¬Æ½Ì¨½«¿ª·Å¸ü¶àµÄÎ¢²©
-	 * ºËĞÄ¹¦ÄÜ¸ø¿ª·¢Õß£¬Í¬Ê±Ò²¼ÓÇ¿ÓÃ»§ÒşË½±£»¤£¬ÌáÉıÁËÓÃ»§ÌåÑé£¬ÓÃ»§ÔÚĞÂ OAuth2.0 ÊÚÈ¨Ò³ÖĞÓĞÈ¨Àû Ñ¡Ôñ¸³ÓèÓ¦ÓÃµÄ¹¦ÄÜ¡£
-	 * 
-	 * ÎÒÃÇÍ¨¹ıĞÂÀËÎ¢²©¿ª·ÅÆ½Ì¨-->¹ÜÀíÖĞĞÄ-->ÎÒµÄÓ¦ÓÃ-->½Ó¿Ú¹ÜÀí´¦£¬ÄÜ¿´µ½ÎÒÃÇÄ¿Ç°ÒÑÓĞÄÄĞ©½Ó¿ÚµÄ Ê¹ÓÃÈ¨ÏŞ£¬¸ß¼¶È¨ÏŞĞèÒª½øĞĞÉêÇë¡£
-	 * 
-	 * Ä¿Ç° Scope Ö§³Ö´«Èë¶à¸ö Scope È¨ÏŞ£¬ÓÃ¶ººÅ·Ö¸ô¡£
-	 * 
-	 * ÓĞ¹ØÄÄĞ© OpenAPI ĞèÒªÈ¨ÏŞÉêÇë£¬Çë²é¿´£ºhttp://open.weibo.com/wiki/%E5%BE%AE%E5%8D%9AAPI
-	 * ¹ØÓÚ Scope ¸ÅÄî¼°×¢ÒâÊÂÏî£¬Çë²é¿´£ºhttp://open.weibo.com/wiki/Scope
-	 */
 	public static final String SCOPE = "email,direct_messages_read,direct_messages_write,"
 			+ "friendships_groups_read,friendships_groups_write,statuses_to_me_read,"
 			+ "follow_app_official_microblog," + "invitation_write";
 
 	public static int cid;
 	public static boolean refresh = false;
-	public static boolean pushInput = false;// Í¨¹ıÍÆËÍ´ò¿ªÈí¼ş
+	public static boolean pushInput = false;// Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Í´ï¿½ï¿½ï¿½ï¿½
 
 }

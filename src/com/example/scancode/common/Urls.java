@@ -3,8 +3,10 @@ package com.example.scancode.common;
 public class Urls {
 
 	private static String common = "http://male888.jios.org:8888/male8/";
-	/** 注册获取验证码 */
+	/** 鍙戦�侀獙璇佺爜 */
 	public static String REGISTER_GET_CODE = common + "sendMsg";
-	/** 登录 */
+	/** 鐧诲綍 */
 	public static String LOGIN = common + "login";
+	/** 娉ㄥ唽*/
+	public static String REGISTER = common +"register";
 }
