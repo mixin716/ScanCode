@@ -47,7 +47,6 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/ic_login_input_bg"
         android:hint="请输入10未ID"
-        android:inputType="number"
         android:paddingLeft="10dp"
         android:textColor="@color/text_deep"
         android:textColorHint="@color/text_light"

@@ -7,12 +7,12 @@
     <Button
         android:id="@+id/button_back"
         android:layout_width="75.0dip"
-        android:text="返回"
-        android:background="@drawable/mm_title_back_btn"
-        android:textColor="@android:color/white"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginLeft="2dip" />
+        android:layout_marginLeft="2dip"
+        android:background="@drawable/mm_title_back_btn"
+        android:text="输入"
+        android:textColor="@android:color/white" />
 
     <TextView
         android:id="@+id/textview_title"

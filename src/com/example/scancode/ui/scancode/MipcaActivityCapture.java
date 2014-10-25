@@ -20,9 +20,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Toast;
-
 import com.example.scancode.BaseActivity;
 import com.example.scancode.R;
+import com.example.scancode.utils.AnimUtil;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.Result;
 import com.mining.app.zxing.camera.CameraManager;
@@ -58,7 +58,18 @@ public class MipcaActivityCapture extends BaseActivity implements Callback {
 		// R.string.scan_card);
 		CameraManager.init(getApplication());
 		viewfinderView = (ViewfinderView) findViewById(R.id.viewfinder_view);
-
+		Button mButtonBack = (Button) findViewById(R.id.button_back);
+		mButtonBack.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(MipcaActivityCapture.this,CheckCodeActivity.class);
+				intent.putExtra("intoFlag", 2);
+				startActivity(intent);
+				AnimUtil.pushLeftInAndOut(MipcaActivityCapture.this);
+				
+			}
+		});
 		hasSurface = false;
 		inactivityTimer = new InactivityTimer(this);
 	}
@@ -104,8 +115,7 @@ public class MipcaActivityCapture extends BaseActivity implements Callback {
 	}
 
 	/**
-	 * ����ɨ����
-	 * 
+	 * 处理扫描结果
 	 * @param result
 	 * @param barcode
 	 */
@@ -124,7 +134,7 @@ public class MipcaActivityCapture extends BaseActivity implements Callback {
 			Bundle bundle = new Bundle();
 			bundle.putInt("intoFlag", 1);
 			bundle.putString("scanIDUrl", resultString);
-			bundle.putParcelable("bitmap", barcode);
+			// bundle.putParcelable("bitmap", barcode);
 			intent.putExtras(bundle);
 			startActivity(intent);
 		}

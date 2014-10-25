@@ -16,6 +16,7 @@ import com.example.scancode.common.UserSharedData;
 import com.example.scancode.ui.mycode.LoginActivity;
 import com.example.scancode.ui.mycode.MyCodeActivity;
 import com.example.scancode.ui.scancode.MipcaActivityCapture;
+import com.example.scancode.ui.scancode.ScanCodeResultActivity;
 
 public class HomeTabActivity extends TabActivity implements
 		OnCheckedChangeListener, OnClickListener {
@@ -48,7 +49,6 @@ public class HomeTabActivity extends TabActivity implements
 		setCurrentActivity(intoSelect);
 	}
 
-	/** ³õÊ¼»¯ÊÓÍ¼ */
 	private void InitViews() {
 		rg = (RadioGroup) findViewById(R.id.buttom_rgroup);
 		rbPromotion = (RadioButton) findViewById(R.id.activity_home_rb_promotion);
@@ -65,10 +65,10 @@ public class HomeTabActivity extends TabActivity implements
 		rbMyCode.setOnClickListener(this);
 	}
 
-	/** ¡¡³õÊ¼»¯Intent */
+	/** ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Intent */
 	private void InitIntent() {
 		mPromotionIntent = new Intent(HomeTabActivity.this, LoginActivity.class);
-		mMallIntent = new Intent(HomeTabActivity.this, MyCodeActivity.class);
+		mMallIntent = new Intent(HomeTabActivity.this, ScanCodeResultActivity.class);
 		mScanCodeIntent = new Intent(HomeTabActivity.this,
 				MipcaActivityCapture.class);
 		mEvaluationIntent = new Intent(HomeTabActivity.this,
@@ -76,7 +76,7 @@ public class HomeTabActivity extends TabActivity implements
 		mMyCodeIntent = new Intent(HomeTabActivity.this, MyCodeActivity.class);
 	}
 
-	/** ÉèÖÃTabHostÌø×ªintent */
+	/** ï¿½ï¿½ï¿½ï¿½TabHostï¿½ï¿½×ªintent */
 	private void setupIntent() {
 		TabHost localTabHost = this.tabHost;
 		try {
@@ -114,7 +114,7 @@ public class HomeTabActivity extends TabActivity implements
 	}
 
 	/**
-	 * ÉèÖÃµ±Ç°Ö÷Ò³µÄ·½·¨
+	 * ï¿½ï¿½ï¿½Ãµï¿½Ç°ï¿½ï¿½Ò³ï¿½Ä·ï¿½ï¿½ï¿½
 	 * 
 	 * @param index
 	 */

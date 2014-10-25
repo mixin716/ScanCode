@@ -7,6 +7,8 @@ public class Urls {
 	public static String REGISTER_GET_CODE = common + "sendMsg";
 	/** 登录 */
 	public static String LOGIN = common + "login";
-	/** 注册*/
-	public static String REGISTER = common +"register";
+	/** 注册 */
+	public static String REGISTER = common + "register";
+	/** 验证信息 */
+	public static String VERIFY = common + "verify";
 }
