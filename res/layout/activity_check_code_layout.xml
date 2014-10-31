@@ -60,7 +60,6 @@
         android:background="@drawable/ic_login_input_bg"
         android:hint="请刮开涂层，输入6位防伪码"
         android:paddingLeft="10dp"
-        android:password="true"
         android:textColor="@color/text_deep"
         android:textColorHint="@color/text_light"
         android:textSize="18sp" />

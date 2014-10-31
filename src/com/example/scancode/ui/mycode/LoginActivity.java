@@ -137,6 +137,7 @@ public class LoginActivity extends BaseActivity {
 					userShare.SaveLevel(loginLevel);
 					userShare.SaveFlag(true);
 					userShare.SaveAllPoint(loginPorint);
+					this.finish();
 				} else {
 					showToast(loginMsg);
 				}

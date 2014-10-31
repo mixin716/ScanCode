@@ -48,14 +48,20 @@ public class CheckCodeActivity extends BaseActivity {
 		// TODO Auto-generated method stub
 		intoFlag = this.getIntent().getIntExtra("intoFlag", 1);
 		strIDUrl = this.getIntent().getStringExtra("scanIDUrl");
-		Log.e("", strIDUrl+"");
+		Log.e("", strIDUrl + "");
 		if (intoFlag == 1) {
-			strID = strIDUrl.substring(strIDUrl.indexOf("code") + 5,
-					strIDUrl.indexOf("code") + 15);
-			strXtype = strIDUrl.substring(strIDUrl.indexOf("xtype") + 6,
-					strIDUrl.indexOf("brand") - 1);
-			strBrand = strIDUrl.substring(strIDUrl.indexOf("brand") + 6,
-					strIDUrl.length());
+			if (strIDUrl.indexOf("code") != -1) {
+				strID = strIDUrl.substring(strIDUrl.indexOf("code") + 5,
+						strIDUrl.indexOf("code") + 15);
+			}
+			if (strIDUrl.indexOf("xtype") != -1) {
+				strXtype = strIDUrl.substring(strIDUrl.indexOf("xtype") + 6,
+						strIDUrl.indexOf("brand") - 1);
+			}
+			if (strIDUrl.indexOf("brand") != -1) {
+				strBrand = strIDUrl.substring(strIDUrl.indexOf("brand") + 6,
+						strIDUrl.length());
+			}
 		}
 	}
 

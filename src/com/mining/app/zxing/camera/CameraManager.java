@@ -19,6 +19,7 @@ package com.mining.app.zxing.camera;
 import java.io.IOException;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.PixelFormat;
 import android.graphics.Point;
 import android.graphics.Rect;
@@ -40,8 +41,8 @@ public final class CameraManager {
 
   private static final int MIN_FRAME_WIDTH = 340;
   private static final int MIN_FRAME_HEIGHT = 340;
-  private static final int MAX_FRAME_WIDTH = 6580;
-  private static final int MAX_FRAME_HEIGHT = 660;
+  private static int MAX_FRAME_WIDTH = 680;
+  private static int MAX_FRAME_HEIGHT = 560;
 
   private static CameraManager cameraManager;
 
@@ -81,6 +82,17 @@ public final class CameraManager {
   public static void init(Context context) {
     if (cameraManager == null) {
       cameraManager = new CameraManager(context);
+      SharedPreferences sp = context.getSharedPreferences("common", 0);
+      MAX_FRAME_HEIGHT = sp.getInt("height", 480);
+      MAX_FRAME_WIDTH = sp.getInt("width", 580);
+      if(MAX_FRAME_HEIGHT != 480){
+    	  MAX_FRAME_HEIGHT = MAX_FRAME_HEIGHT/2;
+      }
+      
+      if(MAX_FRAME_WIDTH != 580){
+    	  MAX_FRAME_WIDTH = MAX_FRAME_WIDTH/3*2;
+    	  MAX_FRAME_HEIGHT = MAX_FRAME_WIDTH;
+      }
     }
   }
 

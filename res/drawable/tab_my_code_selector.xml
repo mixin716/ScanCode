@@ -3,6 +3,7 @@
 
     <item android:drawable="@drawable/ic_home_tab_my_code_press" android:state_pressed="true"></item>
     <item android:drawable="@drawable/ic_home_tab_my_code_press" android:state_selected="true"></item>
+    <item android:drawable="@drawable/ic_home_tab_my_code_press" android:state_checked="true"></item>
     <item android:drawable="@drawable/ic_home_tab_my_code_normal"></item>
 
 </selector>
