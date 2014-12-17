@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/adapter_score_history_tv_name"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="海飞丝去屑发露"
+            android:textColor="@color/text_deep"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/adapter_score_history_tv_value"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="获得5个码乐盾"
+            android:textColor="@color/text_deep"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/text_deep" />
+
+        <TextView
+            android:id="@+id/adapter_score_history_tv_time"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="right"
+            android:text="2014.1.1 11:11"
+            android:textColor="@color/text_light"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</LinearLayout>

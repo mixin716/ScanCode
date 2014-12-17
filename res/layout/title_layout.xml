@@ -44,6 +44,6 @@
         android:text="码乐网"
         android:textColor="@android:color/white"
         android:textSize="20sp"
-        android:visibility="invisible" />
+        android:visibility="visible" />
 
 </RelativeLayout>

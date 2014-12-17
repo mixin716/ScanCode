@@ -51,11 +51,11 @@ public class HomeTabActivity extends TabActivity implements
 		setContentView(R.layout.activity_home_tab_layout);
 		this.tabHost = getTabHost();
 		userShare = UserSharedData.getInstance(getApplicationContext());
-		if (!userShare.GetFlag()) {
-			Toast.makeText(getApplicationContext(), "请先登录", 0).show();
-			Intent intent = new Intent(this, LoginActivity.class);
-			startActivity(intent);
-		}
+		// if (!userShare.GetFlag()) {
+		// Toast.makeText(getApplicationContext(), "请先登录", 0).show();
+		// Intent intent = new Intent(this, LoginActivity.class);
+		// startActivity(intent);
+		// }
 		intoSelect = this.getIntent().getIntExtra("into_tab", 1);
 		InitViews();
 		InitIntent();
