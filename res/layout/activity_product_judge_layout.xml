@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="请输入你想要查看的商品名称："
+        android:textColor="@color/text_deep"
+        android:textSize="16sp" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp" >
+
+        <ImageView
+            android:id="@+id/activity_product_judge_img_left"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/ic_product_judge_search_left" />
+
+        <Button
+            android:id="@+id/activity_product_judge_btn_right"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/ic_product_judge_search_right" />
+
+        <EditText
+            android:id="@+id/activity_product_judge_et"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_toLeftOf="@+id/activity_product_judge_btn_right"
+            android:layout_toRightOf="@+id/activity_product_judge_img_left"
+            android:background="@drawable/ic_product_serach_bg"
+            android:textColor="@color/text_deep"
+            android:paddingLeft="5dp"
+            android:hint="输入产品名称"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+</LinearLayout>

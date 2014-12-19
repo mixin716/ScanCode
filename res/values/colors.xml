@@ -101,10 +101,10 @@
     <color name="wavebackground">#00000000</color>
     <color name="health_control_blood_pressure_point_deep">#36a2f4</color>
     <color name="bg_title">#3ea943</color>
-    <color name="text_color_nomal">#6bce35</color>
-    <color name="line_color_weight">#ffc000</color>
+    <color name="text_color_nomal">#35cf11</color>
+    <color name="line_color">#d7d7d7</color>
     <color name="doc_gray">#F6F6F6</color>
-    <color name="common_bg">#fcfcfc</color>
+    <color name="common_bg">#efeded</color>
     <color name="btn_pressed_green_solid">#B6DA53</color>
     <color name="divider_list">#cccccc</color>
     <color name="top_bar_normal_bg">#4ebcd3</color>

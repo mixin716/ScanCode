@@ -1,64 +1,62 @@
-package com.example.scancode.ui.mycode;
+package com.example.scancode.ui.product;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ListView;
 
 import com.example.scancode.BaseActivity;
 import com.example.scancode.R;
-import com.example.scancode.adapter.mycode.LotteryHistoryAdapter;
-import com.example.scancode.bean.mycode.LotteryHistoryBean;
+import com.example.scancode.adapter.product.ScanHistoryAdapter;
+import com.example.scancode.bean.product.ScanHistoryBean;
 import com.example.scancode.utils.AnimUtil;
 import com.example.scancode.utils.ListViewPassValuetoActivityListener;
 
-public class LotteryHistoryActivity extends BaseActivity implements ListViewPassValuetoActivityListener{
+/** 扫码历史记录 */
+public class ScanHistoryActivity extends BaseActivity implements ListViewPassValuetoActivityListener{
 
 	private ListView lv;
-	private LotteryHistoryAdapter adapter;
-	private List<LotteryHistoryBean> list;
-	
-	
+	private ScanHistoryAdapter adapter;
+	private List<ScanHistoryBean> list;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentViewRes(R.layout.activity_lottery_history_layout);
+		setContentViewRes(R.layout.activity_scan_history_layout);
 		setViews();
 	}
-	
-	
+
 	@Override
 	protected void initVariable() {
 		// TODO Auto-generated method stub
-		list = new ArrayList<LotteryHistoryBean>();
+		list = new ArrayList<ScanHistoryBean>();
 		for (int i = 0; i < 10; i++) {
-			LotteryHistoryBean bean = new LotteryHistoryBean();
-			bean.setName("奖品名称");
-			bean.setFlag(i%2);
-			bean.setTime("2014.12.12 11:33");
+			ScanHistoryBean bean = new ScanHistoryBean();
+			bean.setName("海飞丝真好");
+			bean.setValue("获得5个码乐盾");
+			bean.setTime("2014.13.32 24:01");
 			list.add(bean);
 		}
-		adapter = new LotteryHistoryAdapter(getApplicationContext(), list);
+		adapter = new ScanHistoryAdapter(getApplicationContext(),list);
 		adapter.setListener(this);
 	}
 
 	@Override
 	protected void setTitleViews() {
 		// TODO Auto-generated method stub
-		titleIvRight.setVisibility(View.INVISIBLE);
-		titleText.setText("抽奖历史记录");
+		titleText.setText("扫描历史记录");
 	}
 
 	@Override
 	protected void setViews() {
 		// TODO Auto-generated method stub
-		lv = (ListView) findViewById(R.id.activity_lottery_history_lv);
+		lv = (ListView) findViewById(R.id.activity_scan_history_lv);
 		lv.setAdapter(adapter);
 	}
-	
+
 	@Override
 	protected void doClickAction(int viewId) {
 		// TODO Auto-generated method stub
@@ -68,17 +66,15 @@ public class LotteryHistoryActivity extends BaseActivity implements ListViewPass
 			this.finish();
 			AnimUtil.pushRightInAndOut(this);
 			break;
-
-		default:
-			break;
 		}
 	}
-
 
 	@Override
 	public void doPassActionListener(Object obj, int org1, int org2, String str) {
 		// TODO Auto-generated method stub
-		showToast(""+org1);
+		Intent intent = new Intent(this,JudgeProductActivity.class);
+		startActivity(intent);
+		AnimUtil.pushLeftInAndOut(this);
 	}
 
 }

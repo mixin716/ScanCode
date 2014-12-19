@@ -35,7 +35,7 @@ public class ScoreHistoryActivity extends BaseActivity {
 		for (int i = 0; i < 10; i++) {
 			ScoreHistoryBean bean = new ScoreHistoryBean();
 			bean.setName("最新版海飞丝500ml");
-			bean.setTime("2011.1.1 11：11");
+			bean.setTime("2011.1.1 11:11");
 			bean.setValue("获取5个码乐盾");
 			list.add(bean);
 		}

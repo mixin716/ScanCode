@@ -2,16 +2,21 @@ package com.example.scancode.ui.mycode;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 import com.example.scancode.BaseActivity;
 import com.example.scancode.R;
 import com.example.scancode.common.UserSharedData;
+import com.example.scancode.ui.product.ScanHistoryActivity;
 import com.example.scancode.utils.AnimUtil;
 
 public class MyCodeActivity extends BaseActivity {
 
 	private LinearLayout llScore, llExchange, llLottery, llLook, llChage;
+	private LinearLayout llLogin, llNoLogin;
+	private Button btnLogin;
 	private UserSharedData userShare;
 	private Intent intent;
 
@@ -38,17 +43,28 @@ public class MyCodeActivity extends BaseActivity {
 	@Override
 	protected void setViews() {
 		// TODO Auto-generated method stub
+		llLogin = (LinearLayout) findViewById(R.id.activity_my_code_ll_login);
+		llNoLogin = (LinearLayout) findViewById(R.id.activity_my_code_ll_nologin);
 		llScore = (LinearLayout) findViewById(R.id.activity_my_code_ll_score);
 		llExchange = (LinearLayout) findViewById(R.id.activity_my_code_ll_exchange);
 		llLottery = (LinearLayout) findViewById(R.id.activity_my_code_ll_lottery);
 		llLook = (LinearLayout) findViewById(R.id.activity_my_code_ll_look);
 		llChage = (LinearLayout) findViewById(R.id.activity_my_code_ll_change);
+		btnLogin = (Button) findViewById(R.id.activity_my_code_btn_login);
 
 		llScore.setOnClickListener(this);
 		llExchange.setOnClickListener(this);
 		llLottery.setOnClickListener(this);
 		llLook.setOnClickListener(this);
 		llChage.setOnClickListener(this);
+		btnLogin.setOnClickListener(this);
+		if(userShare.GetFlag()){
+			llLogin.setVisibility(View.VISIBLE);
+			llNoLogin.setVisibility(View.GONE);
+		}else{
+			llNoLogin.setVisibility(View.VISIBLE);
+			llLogin.setVisibility(View.GONE);
+		}
 	}
 
 	@Override
@@ -73,9 +89,20 @@ public class MyCodeActivity extends BaseActivity {
 
 			break;
 		case R.id.activity_my_code_ll_look:// 查看抽奖机会
+			intent = new Intent(this, ScanHistoryActivity.class);
+			startActivity(intent);
+			AnimUtil.pushLeftInAndOut(this);
 
 			break;
 		case R.id.activity_my_code_ll_change:// 修改密码
+			intent = new Intent(this, ChangetPwdActivity.class);
+			startActivity(intent);
+			AnimUtil.pushLeftInAndOut(this);
+			break;
+		case R.id.activity_my_code_btn_login:// 登录
+			intent = new Intent(this, LoginActivity.class);
+			startActivity(intent);
+			AnimUtil.pushLeftInAndOut(this);
 			break;
 		}
 	}

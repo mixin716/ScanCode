@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/common_bg"
     android:orientation="vertical"
-    android:padding="10dp" >
+    android:padding="5dp" >
 
     <com.example.scancode.view.PullToRefreshView
         android:id="@+id/activity_exchange_history_refresh_view"
@@ -12,12 +12,14 @@
         android:layout_height="fill_parent"
         android:background="@android:color/white"
         android:orientation="vertical" >
+
         <ListView
             android:id="@+id/activity_exchange_history_lv"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:divider="@null"
             android:dividerHeight="5dp"
+            android:listSelector="@android:color/transparent"
             android:padding="10dp"
             android:scrollbars="none" >
         </ListView>

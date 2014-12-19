@@ -4,15 +4,15 @@
     android:layout_height="match_parent"
     android:background="@color/common_bg"
     android:orientation="vertical"
-    android:padding="10dp" >
+    android:padding="5dp" >
 
     <ListView
         android:id="@+id/activity_lottery_history_lv"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:divider="@null"
-        android:dividerHeight="5dp"
-        android:padding="10dp"
+        android:dividerHeight="10dp"
+        android:listSelector="@android:color/transparent"
         android:scrollbars="none" >
     </ListView>
 

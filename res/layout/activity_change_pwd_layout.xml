@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <EditText
+        android:id="@+id/activity_change_pwd_et_oldpwd"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_login_input_bg"
+        android:hint="当前密码"
+        android:paddingLeft="10dp"
+        android:password="true"
+        android:textColor="@color/text_deep"
+        android:textColorHint="@color/text_light"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/activity_change_pwd_et_new"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_login_input_bg"
+        android:hint="新密码"
+        android:paddingLeft="10dp"
+        android:password="true"
+        android:textColor="@color/text_deep"
+        android:textColorHint="@color/text_light"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/activity_change_pwd_et_second"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_login_input_bg"
+        android:hint="确认信密码"
+        android:paddingLeft="10dp"
+        android:password="true"
+        android:textColor="@color/text_deep"
+        android:textColorHint="@color/text_light"
+        android:textSize="18sp" />
+    
+     <Button
+        android:id="@+id/activity_change_pwd_btn_sure"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/ic_btn_green_normal"
+        android:gravity="center"
+        android:text="确认"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+</LinearLayout>

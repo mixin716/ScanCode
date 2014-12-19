@@ -20,7 +20,7 @@ public class LoadingActivity extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_loading);
-		handler.sendEmptyMessageDelayed(0, 2000);
+		handler.sendEmptyMessageDelayed(0, 200);
 		getWindowHW();
 	}
 	

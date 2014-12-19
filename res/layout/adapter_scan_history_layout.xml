@@ -11,7 +11,7 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/adapter_score_history_tv_name"
+            android:id="@+id/adapter_scan_history_tv_name"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_my_code_score_item_top_bg"
@@ -19,17 +19,37 @@
             android:textColor="@color/text_deep"
             android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/adapter_score_history_tv_value"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/ic_my_code_score_item_value_bg"
-            android:paddingLeft="10dp"
-            android:paddingRight="20dp"
-            android:text="获得5个码乐盾"
-            android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/adapter_scan_history_tv_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/ic_my_code_score_item_value_bg"
+                android:paddingLeft="10dp"
+                android:paddingRight="20dp"
+                android:text="获得5个码乐盾"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/adapter_scan_history_tv_judge"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/ic_scan_history_judge_bg"
+                android:gravity="center"
+                android:text="评价"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </RelativeLayout>
 
         <View
             android:layout_width="fill_parent"
@@ -38,7 +58,7 @@
             android:background="#d7d7d7" />
 
         <TextView
-            android:id="@+id/adapter_score_history_tv_time"
+            android:id="@+id/adapter_scan_history_tv_time"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"

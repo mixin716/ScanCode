@@ -3,7 +3,6 @@ package com.example.scancode;
 import java.lang.reflect.Field;
 
 import android.app.TabActivity;
-import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -17,11 +16,11 @@ import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TabHost;
 import android.widget.Toast;
+
 import com.example.scancode.common.UserSharedData;
-import com.example.scancode.ui.mycode.LoginActivity;
 import com.example.scancode.ui.mycode.MyCodeActivity;
+import com.example.scancode.ui.product.ProductJudgeActivity;
 import com.example.scancode.ui.scancode.MipcaActivityCapture;
-import com.example.scancode.ui.scancode.ScanCodeResultActivity;
 
 public class HomeTabActivity extends TabActivity implements
 		OnCheckedChangeListener, OnClickListener {
@@ -86,7 +85,7 @@ public class HomeTabActivity extends TabActivity implements
 		mScanCodeIntent = new Intent(HomeTabActivity.this,
 				MipcaActivityCapture.class);
 		mEvaluationIntent = new Intent(HomeTabActivity.this,
-				MyCodeActivity.class);
+				ProductJudgeActivity.class);
 		mMyCodeIntent = new Intent(HomeTabActivity.this, MyCodeActivity.class);
 	}
 
@@ -154,8 +153,8 @@ public class HomeTabActivity extends TabActivity implements
 		// rbMall.setBackgroundResource(R.drawable.ic_home_tab_mall_normal);
 		rbScanCode
 				.setBackgroundResource(R.drawable.ic_home_tab_scan_code_normal);
-		// rbEvaluation
-		// .setBackgroundResource(R.drawable.ic_home_tab_evaluation_normal);
+		rbEvaluation
+				.setBackgroundResource(R.drawable.ic_home_tab_evaluation_normal);
 		rbMyCode.setBackgroundResource(R.drawable.ic_home_tab_my_code_normal);
 		switch (arg1) {
 		case R.id.activity_home_rb_promotion:
@@ -174,9 +173,9 @@ public class HomeTabActivity extends TabActivity implements
 			break;
 		case R.id.activity_home_rb_evaluation:
 
-			// this.tabHost.setCurrentTabByTag(TAB_EVALUATION);
-			// rbEvaluation
-			// .setBackgroundResource(R.drawable.ic_home_tab_evaluation_press);
+			 this.tabHost.setCurrentTabByTag(TAB_EVALUATION);
+			 rbEvaluation
+			 .setBackgroundResource(R.drawable.ic_home_tab_evaluation_press);
 			break;
 
 		case R.id.activity_home_rb_myCode:
