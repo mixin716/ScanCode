@@ -28,28 +28,78 @@
             android:layout_height="fill_parent"
             tools:ignore="Orientation" />
 
+        <com.example.scancode.view.PullToRefreshView
+            android:id="@+id/activity_base_refresh"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@android:color/white"
+            android:orientation="vertical" >
+
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <LinearLayout
+                    android:id="@+id/page_refresh_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    tools:ignore="Orientation" >
+                </LinearLayout>
+            </ScrollView>
+        </com.example.scancode.view.PullToRefreshView>
+
         <include
             android:id="@+id/page_net_error"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             layout="@layout/activity_net_error_layout" />
 
-        <LinearLayout
-            android:id="@+id/page_loading"
+        <!-- 请求网络 全屏显示 -->
+
+        <include
+            android:id="@+id/page_loading_request"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            layout="@layout/loading_center_layout"
+            android:visibility="gone" />
+        <!-- 上传数据 -->
+
+        <include
+            android:id="@+id/page_loading_send"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            layout="@layout/loading_center_layout"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/page_loading"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_centerInParent="true"
-            android:gravity="center" >
+            android:background="@drawable/ic_loading_center_bg"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="15dp" >
 
             <ProgressBar
-                android:id="@+id/page_loading_progressbar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:indeterminateDrawable="@anim/progress_rotate"
-                android:maxHeight="140dp"
-                android:maxWidth="140dp"
-                android:minHeight="140dp"
-                android:minWidth="140dp" />
+                android:layout_gravity="center"
+                android:layout_marginTop="10dip"
+                android:indeterminate="true"
+                android:indeterminateDrawable="@drawable/loading_top_anim"
+                android:maxHeight="20dp"
+                android:maxWidth="40dp"
+                android:minHeight="20dp"
+                android:minWidth="40dp" />
+
+            <TextView
+                android:id="@+id/page_loading_center_tv_flag"
+                style="@style/layout_wrap"
+                android:layout_marginTop="10dp"
+                android:text="加载中···"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
         </LinearLayout>
         <!-- android:background="@drawable/bg_loading" -->
 

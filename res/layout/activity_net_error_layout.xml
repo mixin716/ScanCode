@@ -18,7 +18,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="10dp"
-        android:text="医生回复后会马上消息通知您，请注意查收！"
         android:textColor="@color/default_text_color"
         android:textSize="24sp"
         android:visibility="gone" />

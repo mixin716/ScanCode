@@ -13,9 +13,14 @@ import com.example.scancode.adapter.mycode.ExchangeHistoryAdapter;
 import com.example.scancode.bean.mycode.ExchangeHistoryBean;
 import com.example.scancode.common.UserSharedData;
 import com.example.scancode.utils.AnimUtil;
+import com.example.scancode.view.PullToRefreshView;
+import com.example.scancode.view.PullToRefreshView.OnFooterRefreshListener;
+import com.example.scancode.view.PullToRefreshView.OnHeaderRefreshListener;
 
-public class ExchangeHistoryActivity extends BaseActivity {
+public class ExchangeHistoryActivity extends BaseActivity implements
+		OnHeaderRefreshListener, OnFooterRefreshListener {
 
+	private PullToRefreshView mPullToRefreshView;
 	private ListView lv;
 	private ExchangeHistoryAdapter adapter;
 	private List<ExchangeHistoryBean> list;
@@ -54,6 +59,9 @@ public class ExchangeHistoryActivity extends BaseActivity {
 	@Override
 	protected void setViews() {
 		// TODO Auto-generated method stub
+		mPullToRefreshView = (PullToRefreshView) findViewById(R.id.activity_exchange_history_refresh_view);
+		mPullToRefreshView.setOnHeaderRefreshListener(this);
+		mPullToRefreshView.setOnFooterRefreshListener(this);
 		lv = (ListView) findViewById(R.id.activity_exchange_history_lv);
 		lv.setAdapter(adapter);
 	}
@@ -71,6 +79,20 @@ public class ExchangeHistoryActivity extends BaseActivity {
 		default:
 			break;
 		}
+	}
+
+	@Override
+	public void onFooterRefresh(PullToRefreshView view) {
+		// TODO Auto-generated method stub
+		super.onFooterRefresh(view);
+
+	}
+
+	@Override
+	public void onHeaderRefresh(PullToRefreshView view) {
+		// TODO Auto-generated method stub
+		super.onHeaderRefresh(view);
+		mPullToRefreshView.onHeaderRefreshComplete();
 	}
 
 }
