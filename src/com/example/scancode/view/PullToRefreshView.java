@@ -120,6 +120,8 @@ public class PullToRefreshView extends LinearLayout {
 	 * footer refresh listener
 	 */
 	private OnHeaderRefreshListener mOnHeaderRefreshListener;
+	
+	private boolean refreshHead = true,refreshFoot=true;
 
 	public PullToRefreshView(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -500,6 +502,7 @@ public class PullToRefreshView extends LinearLayout {
 	 * @description willm 2012/12/4 上午 12:07
 	 */
 	private void footerRefreshing() {
+		
 		mFooterState = REFRESHING;
 		int top = mHeaderViewHeight + mFooterViewHeight;
 		setHeaderTopMargin(-top);
@@ -612,5 +615,16 @@ public class PullToRefreshView extends LinearLayout {
 	 */
 	public interface OnHeaderRefreshListener {
 		public void onHeaderRefresh(PullToRefreshView view);
+	}
+
+	/** 隐藏下拉刷新*/
+	public void dismissTop(){
+		mHeaderView.setVisibility(View.INVISIBLE);
+		refreshHead = false;
+	}
+	/** 隐藏上拉加载*/
+	public void dismissFoot(){
+		mFooterView.setVisibility(View.INVISIBLE);
+		refreshFoot = false;
 	}
 }

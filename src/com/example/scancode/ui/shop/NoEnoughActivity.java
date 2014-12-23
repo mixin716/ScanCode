@@ -1,48 +1,43 @@
-package com.example.scancode.ui.product;
+package com.example.scancode.ui.shop;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.scancode.BaseActivity;
 import com.example.scancode.R;
-import com.example.scancode.adapter.product.ProductListAdapter;
+import com.example.scancode.common.UserSharedData;
 import com.example.scancode.utils.AnimUtil;
 
-public class ProductListActivity extends BaseActivity {
+/** 余额不足 */
+public class NoEnoughActivity extends BaseActivity {
 
-	private ListView lv;
-	private View headView;
-	private ProductListAdapter adapter;
-
+	private TextView tv;
+	private UserSharedData userShare;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentViewRes(R.layout.activity_product_list_layout);
+		setContentViewRes(R.layout.activity_no_enough_layout);
 		setViews();
 	}
 
 	@Override
 	protected void initVariable() {
 		// TODO Auto-generated method stub
-		adapter = new ProductListAdapter(getApplicationContext());
+		userShare = UserSharedData.getInstance(getApplicationContext());
 	}
 
 	@Override
 	protected void setTitleViews() {
 		// TODO Auto-generated method stub
-		titleText.setText("评价列表");
+		titleText.setText("余额不足");
 	}
 
 	@Override
 	protected void setViews() {
 		// TODO Auto-generated method stub
-		headView = View.inflate(getApplicationContext(),
-				R.layout.view_product_list_head_layout, null);
-		lv = (ListView) findViewById(R.id.activity_product_list_lv);
-		lv.addHeaderView(headView);
-		lv.setAdapter(adapter);
+		tv = (TextView) findViewById(R.id.activity_no_enough_tv);
 	}
 
 	@Override
@@ -56,4 +51,5 @@ public class ProductListActivity extends BaseActivity {
 			break;
 		}
 	}
+
 }

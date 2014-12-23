@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/ic_my_code_top_bg"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/activity_recharge_success_tv"
+            style="@style/layout_wrap"
+            android:gravity="center"
+            android:text="正在向手机15012345678内充值10元，7个工作日内会充到，请及时查询。"
+            android:textColor="@color/text_deep"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</LinearLayout>

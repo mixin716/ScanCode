@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/activity_shop_main_btn_choujiang"
+        style="@style/layout_wrap"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_judge_success_item"
+        android:text="抽奖"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/activity_shop_main_btn_chongzhi"
+        style="@style/layout_wrap"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_judge_success_item"
+        android:text="手机充值"
+        android:textColor="@color/white" />
+
+    <Button
+        android:id="@+id/activity_shop_main_btn_dianzi"
+        style="@style/layout_wrap"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_judge_success_item"
+        android:text="电子券"
+        android:textColor="@color/white" />
+
+</LinearLayout>

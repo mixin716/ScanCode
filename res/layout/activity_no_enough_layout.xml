@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/ic_my_code_top_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <TextView
+            style="@style/layout_wrap"
+            android:gravity="center"
+            android:text="对不起,您账户中的码乐盾不足,无法兑换"
+            android:textColor="@color/text_deep"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/activity_no_enough_tv"
+            style="@style/layout_wrap"
+            android:layout_marginTop="5dp"
+            android:text="当前,您的账户中共有30码乐盾"
+            android:textColor="@color/text_deep"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</LinearLayout>

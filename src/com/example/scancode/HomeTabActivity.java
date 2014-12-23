@@ -21,6 +21,7 @@ import com.example.scancode.common.UserSharedData;
 import com.example.scancode.ui.mycode.MyCodeActivity;
 import com.example.scancode.ui.product.ProductJudgeActivity;
 import com.example.scancode.ui.scancode.MipcaActivityCapture;
+import com.example.scancode.ui.shop.CodeShopActivity;
 
 public class HomeTabActivity extends TabActivity implements
 		OnCheckedChangeListener, OnClickListener {
@@ -81,7 +82,7 @@ public class HomeTabActivity extends TabActivity implements
 	private void InitIntent() {
 		mPromotionIntent = new Intent(HomeTabActivity.this,
 				MyCodeActivity.class);
-		mMallIntent = new Intent(HomeTabActivity.this, MyCodeActivity.class);
+		mMallIntent = new Intent(HomeTabActivity.this, CodeShopActivity.class);
 		mScanCodeIntent = new Intent(HomeTabActivity.this,
 				MipcaActivityCapture.class);
 		mEvaluationIntent = new Intent(HomeTabActivity.this,
@@ -148,9 +149,9 @@ public class HomeTabActivity extends TabActivity implements
 	@Override
 	public void onCheckedChanged(RadioGroup arg0, int arg1) {
 		// TODO Auto-generated method stub
-		// rbPromotion
-		// .setBackgroundResource(R.drawable.ic_home_tab_promotion_normal);
-		// rbMall.setBackgroundResource(R.drawable.ic_home_tab_mall_normal);
+		rbPromotion
+				.setBackgroundResource(R.drawable.ic_home_tab_promotion_normal);
+		rbMall.setBackgroundResource(R.drawable.ic_home_tab_mall_normal);
 		rbScanCode
 				.setBackgroundResource(R.drawable.ic_home_tab_scan_code_normal);
 		rbEvaluation
@@ -163,8 +164,8 @@ public class HomeTabActivity extends TabActivity implements
 			// .setBackgroundResource(R.drawable.ic_home_tab_promotion_press);
 			break;
 		case R.id.activity_home_rb_mall:
-			// this.tabHost.setCurrentTabByTag(TAB_MALL);
-			// rbMall.setBackgroundResource(R.drawable.ic_home_tab_mall_press);
+			this.tabHost.setCurrentTabByTag(TAB_MALL);
+			rbMall.setBackgroundResource(R.drawable.ic_home_tab_mall_press);
 			break;
 		case R.id.activity_home_rb_scanCode:
 			this.tabHost.setCurrentTabByTag(TAB_SCANCODE);
@@ -173,9 +174,9 @@ public class HomeTabActivity extends TabActivity implements
 			break;
 		case R.id.activity_home_rb_evaluation:
 
-			 this.tabHost.setCurrentTabByTag(TAB_EVALUATION);
-			 rbEvaluation
-			 .setBackgroundResource(R.drawable.ic_home_tab_evaluation_press);
+			this.tabHost.setCurrentTabByTag(TAB_EVALUATION);
+			rbEvaluation
+					.setBackgroundResource(R.drawable.ic_home_tab_evaluation_press);
 			break;
 
 		case R.id.activity_home_rb_myCode:

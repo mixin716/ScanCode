@@ -2,6 +2,7 @@ package com.example.scancode.ui.mycode;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -11,9 +12,13 @@ import com.example.scancode.R;
 import com.example.scancode.common.UserSharedData;
 import com.example.scancode.ui.product.ScanHistoryActivity;
 import com.example.scancode.utils.AnimUtil;
+import com.example.scancode.view.PullToRefreshView;
+import com.example.scancode.view.PullToRefreshView.OnFooterRefreshListener;
 
-public class MyCodeActivity extends BaseActivity {
+public class MyCodeActivity extends BaseActivity implements
+		OnFooterRefreshListener {
 
+	private PullToRefreshView mPullToRefreshView;
 	private LinearLayout llScore, llExchange, llLottery, llLook, llChage;
 	private LinearLayout llLogin, llNoLogin;
 	private Button btnLogin;
@@ -43,6 +48,10 @@ public class MyCodeActivity extends BaseActivity {
 	@Override
 	protected void setViews() {
 		// TODO Auto-generated method stub
+		mPullToRefreshView = (PullToRefreshView) findViewById(R.id.activity_my_code_refresh_view);
+		mPullToRefreshView.dismissFoot();
+		mPullToRefreshView.setOnHeaderRefreshListener(this);
+		mPullToRefreshView.setOnFooterRefreshListener(this);
 		llLogin = (LinearLayout) findViewById(R.id.activity_my_code_ll_login);
 		llNoLogin = (LinearLayout) findViewById(R.id.activity_my_code_ll_nologin);
 		llScore = (LinearLayout) findViewById(R.id.activity_my_code_ll_score);
@@ -58,10 +67,10 @@ public class MyCodeActivity extends BaseActivity {
 		llLook.setOnClickListener(this);
 		llChage.setOnClickListener(this);
 		btnLogin.setOnClickListener(this);
-		if(userShare.GetFlag()){
+		if (userShare.GetFlag()) {
 			llLogin.setVisibility(View.VISIBLE);
 			llNoLogin.setVisibility(View.GONE);
-		}else{
+		} else {
 			llNoLogin.setVisibility(View.VISIBLE);
 			llLogin.setVisibility(View.GONE);
 		}
@@ -107,4 +116,23 @@ public class MyCodeActivity extends BaseActivity {
 		}
 	}
 
+	@Override
+	public void onFooterRefresh(PullToRefreshView view) {
+		// TODO Auto-generated method stub
+		super.onFooterRefresh(view);
+		mPullToRefreshView.onFooterRefreshComplete();
+	}
+
+	@Override
+	public void onHeaderRefresh(PullToRefreshView view) {
+		// TODO Auto-generated method stub
+		super.onHeaderRefresh(view);
+		handler.sendEmptyMessageDelayed(0, 3000);
+	}
+
+	public Handler handler = new Handler() {
+		public void handleMessage(android.os.Message msg) {
+			mPullToRefreshView.onHeaderRefreshComplete();
+		};
+	};
 }
